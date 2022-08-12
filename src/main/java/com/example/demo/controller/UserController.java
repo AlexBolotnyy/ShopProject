@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/controller")
-public class controller {
+@RequestMapping("/user-controller")
+public class UserController {
 
-    @GetMapping("/some")
+    @GetMapping("/createNewUser")
     public String sayHello(String name){
         return "hello " + name;
     }
