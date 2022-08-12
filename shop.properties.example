@@ -1,0 +1,8 @@
+spring.datasource.url = jdbc:postgresql://localhost:5432/shop
+spring.datasource.username = postgres
+spring.datasource.password = admin
+
+server.port = 7070
+
+# swagger-ui custom path
+springdoc.swagger-ui.path=/swagger-ui.html
