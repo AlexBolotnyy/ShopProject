@@ -3,15 +3,17 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="12.08.2022_user_create_table" author="bolotyi">
-        <createTable tableName="user">
+    <changeSet id="12.08.2022_user_table_create" author="bolotyi">
+        <createTable tableName="shop_user">
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="name" type="varchar(64)"/>
-            <column name="email" type="int">
+            <column name="name" type="varchar(64)" remarks="имя"/>
+            <column name="second_name" type="varchar(64)" remarks="фамилия"/>
+            <column name="email" type="varchar(50)" remarks="email">
                 <constraints unique="true"/>
             </column>
+            <column name="phone" type="varchar(12)" remarks="номер телефона"/>
         </createTable>
     </changeSet>
 
