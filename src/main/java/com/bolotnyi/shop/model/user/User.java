@@ -1,4 +1,5 @@
-package com.example.demo.model.user;
+package com.bolotnyi.shop.model.user;
+
 
 import lombok.Data;
 
