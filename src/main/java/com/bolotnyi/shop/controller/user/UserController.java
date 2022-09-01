@@ -1,4 +1,4 @@
-package com.bolotnyi.shop.controller;
+package com.bolotnyi.shop.controller.user;
 
 import com.bolotnyi.shop.model.user.UserDto;
 import com.bolotnyi.shop.service.user.UserService;
