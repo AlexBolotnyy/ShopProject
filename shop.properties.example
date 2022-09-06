@@ -1,8 +1,16 @@
-spring.datasource.url = jdbc:postgresql://localhost:5432/shop
+spring.datasource.url = jdbc:postgresql://localhost:5432/shop_db
 spring.datasource.username = postgres
 spring.datasource.password = admin
 
 server.port = 7070
 
+spring.jpa.hibernate.ddl-auto = update
+
+# SQL
+spring.jpa.properties.hibernate.show_sql=true
+
 # swagger-ui custom path
 springdoc.swagger-ui.path=/swagger-ui.html
+
+#-----Liquibase------
+spring.liquibase.change-log=classpath:db.changelog/db.changelog-master.xml
