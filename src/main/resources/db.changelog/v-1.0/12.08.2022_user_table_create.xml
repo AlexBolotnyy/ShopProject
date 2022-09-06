@@ -8,6 +8,9 @@
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
+            <column name="login" type="varchar(150)" remarks="логин"/>
+            <column name="password" type="varchar(150)" remarks="пароль"/>
+            <column name="role" type="varchar(50)" remarks="роль"/>
             <column name="name" type="varchar(64)" remarks="имя"/>
             <column name="second_name" type="varchar(64)" remarks="фамилия"/>
             <column name="email" type="varchar(50)" remarks="email">

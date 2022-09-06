@@ -8,12 +8,21 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "shop_user")
-public class User {
+public class ShopUser {
 
     @Column(name = "id", columnDefinition = "ID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "login", columnDefinition = "логин")
+    private String login;
+
+    @Column(name = "password", columnDefinition = "пароль")
+    private String password;
+
+    @Column(name = "role", columnDefinition = "роль")
+    private String role;
 
     @Column(name = "name", columnDefinition = "имя")
     private String name;

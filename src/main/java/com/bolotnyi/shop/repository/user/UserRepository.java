@@ -1,8 +1,10 @@
 package com.bolotnyi.shop.repository.user;
 
-import com.bolotnyi.shop.model.user.User;
+import com.bolotnyi.shop.model.user.ShopUser;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+import java.util.Optional;
 
+public interface UserRepository extends CrudRepository<ShopUser, Long> {
+    Optional<ShopUser> findByLogin(String login);
 }

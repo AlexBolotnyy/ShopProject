@@ -1,0 +1,17 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="12.08.2022_user_table_create" author="bolotyi">
+        <insert tableName="shop_user">
+            <column name="login" value="admin"/>
+            <column name="password" value="$2a$10$zmoTFaCwQuuBDvM5Tdr3ae47ufB9uk4Pi07q4elhIuM0MwsRVvf5u"/>
+            <column name="role" value="ADMIN"/>
+            <column name="name" value="Alexey"/>
+            <column name="second_name" value="Bolotnyi"/>
+            <column name="email" value="89228067141afmit@gmail.com"/>
+            <column name="phone" value="89991585270"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

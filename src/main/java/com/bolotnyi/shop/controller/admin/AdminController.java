@@ -1,25 +1,16 @@
-package com.bolotnyi.shop.controller.some;
+package com.bolotnyi.shop.controller.admin;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/some")
-public class SomeController {
+@RequestMapping("/admin")
+public class AdminController {
 
     @GetMapping("/hello")
     public String hello() {
         return "hello";
     }
 
-    @GetMapping("/goodbye")
-    public String goodbye() {
-        return "goodbye";
-    }
-
-    @GetMapping("/all")
-    public String all() {
-        return "all";
-    }
 }
