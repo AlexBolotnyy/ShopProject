@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="10.09.2022_book_genre_link_table_create_import_1" author="bolotyi">
+        <createTable tableName="book_genre_link">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="book_id" type="int" remarks="ID книги"/>
+            <column name="genre_id" type="int" remarks="ID жанра"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="10.09.2022_book_genre_link_table_create_import_2" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="book_genre_link"
+                                 baseColumnNames="book_id"
+                                 constraintName="book_genre_link_fk_1"
+                                 referencedTableName="book_table"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="10.09.2022_book_genre_link_table_create_import_3" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="book_genre_link"
+                                 baseColumnNames="genre_id"
+                                 constraintName="book_genre_link_fk_2"
+                                 referencedTableName="genre_table"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

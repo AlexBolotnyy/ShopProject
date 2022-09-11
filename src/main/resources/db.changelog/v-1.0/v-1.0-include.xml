@@ -5,5 +5,9 @@
 
     <include file="db.changelog/v-1.0/12.08.2022_user_table_create.xml"/>
     <include file="db.changelog/v-1.0/04.09.2022_user_table_init_filling.xml"/>
+    <include file="db.changelog/v-1.0/06.09.2022_author_table_create.xml"/>
+    <include file="db.changelog/v-1.0/10.09.2022_genre_table_create.xml"/>
+    <include file="db.changelog/v-1.0/10.09.2022_book_table_create.xml"/>
+    <include file="db.changelog/v-1.0/06.09.2022_book_genre_link_table_create.xml"/>
 
 </databaseChangeLog>

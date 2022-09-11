@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="06.09.2022_author_table_create" author="bolotyi">
+        <createTable tableName="author_table">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(200)" remarks="имя"/>
+            <column name="second_name" type="varchar(200)" remarks="фамилия"/>
+            <column name="patronymic" type="varchar(200)" remarks="отчество"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="06.09.2022_author_table_create_import_2" author="bolotyi">
+        <addColumn tableName="author_table">
+            <column name="nm_full" type="varchar(600)" remarks="Полное имя"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

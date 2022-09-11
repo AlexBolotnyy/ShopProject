@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="06.09.2022_author_table_create_import-1" author="bolotyi">
+        <createTable tableName="book_table">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(400)" remarks="Название"/>
+            <column name="publish_date" type="timestamp " remarks="Дата публикации"/>
+            <column name="author_id" type="int" remarks="ID автора"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="06.09.2022_author_table_create_import-2" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="book_table"
+                                 baseColumnNames="author_id"
+                                 constraintName="book_fk_1"
+                                 referencedTableName="author_table"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

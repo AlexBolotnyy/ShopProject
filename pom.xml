@@ -77,6 +77,12 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.5.2.Final</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.4.33.Final</version>
+        </dependency>
     </dependencies>
 
     <build>
