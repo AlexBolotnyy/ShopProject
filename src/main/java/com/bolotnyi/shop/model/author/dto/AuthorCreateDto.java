@@ -12,6 +12,5 @@ public class AuthorCreateDto {
     private String name;
     @NotNull
     private String secondName;
-    @NotNull
     private String patronymic;
 }

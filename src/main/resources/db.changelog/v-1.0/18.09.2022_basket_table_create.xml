@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="18.09.2022_basket_link_table_create_import_1" author="bolotyi">
+        <createTable tableName="basket_table">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="int" remarks="ID пользователя"/>
+            <column name="book_id" type="int" remarks="ID товара(книги)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="18.09.2022_basket_link_table_create_import_2" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="basket_table"
+                                 baseColumnNames="user_id"
+                                 constraintName="basket_fk_1"
+                                 referencedTableName="shop_user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="18.09.2022_basket_link_table_create_import_3" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="basket_table"
+                                 baseColumnNames="book_id"
+                                 constraintName="basket_fk_2"
+                                 referencedTableName="book_table"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

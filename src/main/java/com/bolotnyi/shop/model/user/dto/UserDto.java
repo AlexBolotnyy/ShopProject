@@ -1,4 +1,4 @@
-package com.bolotnyi.shop.model.user;
+package com.bolotnyi.shop.model.user.dto;
 
 import lombok.Data;
 

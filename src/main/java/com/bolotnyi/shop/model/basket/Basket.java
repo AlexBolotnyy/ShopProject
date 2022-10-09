@@ -1,6 +1,7 @@
-package com.bolotnyi.shop.model.book;
+package com.bolotnyi.shop.model.basket;
 
-import com.bolotnyi.shop.model.genre.Genre;
+import com.bolotnyi.shop.model.book.Book;
+import com.bolotnyi.shop.model.user.ShopUser;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,8 +10,8 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "book_genre_link")
-public class BookGenreLink {
+@Table(name = "basket_table")
+public class Basket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +22,6 @@ public class BookGenreLink {
     private Book book;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="genre_id")
-    private Genre genre;
+    @JoinColumn(name="user_id")
+    private ShopUser user;
 }

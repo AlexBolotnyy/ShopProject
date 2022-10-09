@@ -1,10 +1,11 @@
 package com.bolotnyi.shop.model.genre;
 
-import com.bolotnyi.shop.model.book.BookGenreLink;
+import com.bolotnyi.shop.model.book.Book;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,6 +21,6 @@ public class Genre {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "genre", fetch = FetchType.LAZY)
-    private List<BookGenreLink> bookGenreLinks;
+    @ManyToMany(mappedBy = "genreList")
+    private List<Book> authors = new ArrayList<>();
 }

@@ -9,5 +9,7 @@
     <include file="db.changelog/v-1.0/10.09.2022_genre_table_create.xml"/>
     <include file="db.changelog/v-1.0/10.09.2022_book_table_create.xml"/>
     <include file="db.changelog/v-1.0/06.09.2022_book_genre_link_table_create.xml"/>
-
+    <include file="db.changelog/v-1.0/18.09.2022_basket_table_create.xml"/>
+    <include file="db.changelog/v-1.0/02.10.2022_purchase_table_create.xml"/>
+    <include file="db.changelog/v-1.0/02.10.2022_book_purchase_link_table_create.xml"/>
 </databaseChangeLog>

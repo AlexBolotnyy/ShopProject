@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02.10.2022_purchase_table_create_import-1" author="bolotyi">
+        <createTable tableName="purchase_table">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="total_price" type="numeric" remarks="Общая стоимость"/>
+            <column name="date" type="timestamp " remarks="Дата покупки"/>
+            <column name="user_id" type="int" remarks="ID пользователя"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="02.10.2022_purchase_table_create_import-2" author="bolotyi">
+        <addForeignKeyConstraint baseTableName="purchase_table"
+                                 baseColumnNames="user_id"
+                                 constraintName="purchase_fk_1"
+                                 referencedTableName="shop_user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

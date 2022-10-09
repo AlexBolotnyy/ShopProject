@@ -13,7 +13,6 @@
             <column name="author_id" type="int" remarks="ID автора"/>
         </createTable>
     </changeSet>
-
     <changeSet id="06.09.2022_author_table_create_import-2" author="bolotyi">
         <addForeignKeyConstraint baseTableName="book_table"
                                  baseColumnNames="author_id"
@@ -21,5 +20,14 @@
                                  referencedTableName="author_table"
                                  referencedColumnNames="id"/>
     </changeSet>
-
+    <changeSet id="11.09.2022_author_table_create_import-3" author="bolotyi">
+        <addColumn tableName="book_table">
+            <column name="amount" type="int" remarks="Количество штук в наличии"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="02.10.2022_author_table_create_import-4" author="bolotyi">
+        <addColumn tableName="book_table">
+            <column name="price" type="numeric" remarks="Стоимость"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

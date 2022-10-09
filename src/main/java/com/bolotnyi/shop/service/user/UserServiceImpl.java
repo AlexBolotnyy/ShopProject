@@ -1,8 +1,10 @@
 package com.bolotnyi.shop.service.user;
 
+import com.bolotnyi.shop.model.common.EnumDto;
 import com.bolotnyi.shop.model.exception.BusinessException;
 import com.bolotnyi.shop.model.user.ShopUser;
-import com.bolotnyi.shop.model.user.UserDto;
+import com.bolotnyi.shop.model.user.dto.UserDto;
+import com.bolotnyi.shop.repository.book.BookRepository;
 import com.bolotnyi.shop.repository.user.UserRepository;
 import com.bolotnyi.shop.service.auth.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final CustomUserDetailsService userDetailsService;
+    private final BookRepository bookRepository;
 
     @Override
     public void createNewUser(UserDto dto) {
@@ -45,7 +48,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String userInfo() {
-        return userDetailsService.getCurrentUser().getLogin();
+    public EnumDto userInfo() {
+        EnumDto enumDto = new EnumDto();
+        ShopUser user = userDetailsService.getCurrentUser();
+        enumDto.setId(user.getId().toString());
+        enumDto.setTitle(user.getName());
+        return enumDto;
     }
 }

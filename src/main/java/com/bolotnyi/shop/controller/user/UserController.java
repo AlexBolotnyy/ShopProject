@@ -1,6 +1,6 @@
 package com.bolotnyi.shop.controller.user;
 
-import com.bolotnyi.shop.model.user.UserDto;
+import com.bolotnyi.shop.model.common.EnumDto;
 import com.bolotnyi.shop.service.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,8 @@ public class UserController {
 
     @GetMapping("/info")
     @Operation(description = "получение списка пользователей")
-    public String info(UserDto filter) {
+    public EnumDto info() {
         return userService.userInfo();
     }
+
 }

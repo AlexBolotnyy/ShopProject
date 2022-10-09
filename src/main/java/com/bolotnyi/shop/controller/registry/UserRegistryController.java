@@ -1,6 +1,6 @@
 package com.bolotnyi.shop.controller.registry;
 
-import com.bolotnyi.shop.model.user.UserDto;
+import com.bolotnyi.shop.model.user.dto.UserDto;
 import com.bolotnyi.shop.service.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
