@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -24,4 +25,7 @@ public class BookCreateDto {
     private String publishDate;
     @Parameter(description = "Количество")
     private Long amount;
+    @NotNull
+    @Parameter(description = "Дата публикации")
+    private BigDecimal price;
 }

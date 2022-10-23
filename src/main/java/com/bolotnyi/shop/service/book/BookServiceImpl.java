@@ -48,6 +48,7 @@ public class BookServiceImpl implements BookService {
         book.setPublishDate(getPublishDate(createDto.getPublishDate()));
         book.setAuthor(getAuthor(createDto.getAuthorId()));
         book.setAmount(Optional.ofNullable(createDto.getAmount()).orElse(0L));
+        book.setPrice(createDto.getPrice());
         book.insertGenre(genreRepository.getGenresById(createDto.getGenresList()));
         bookRepository.save(book);
     }
